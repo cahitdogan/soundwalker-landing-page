@@ -18,13 +18,17 @@ function playPause(musicOrder) {
           playPause(index);
         }
       }
-      audio[musicOrder].play();
       playPauseButton.classList.add("playing");
-      timerBar.classList.add("timer-bar-animation");
-      timerBar.style.animationPlayState = "running";
-      interval_ID_container[musicOrder] = setInterval(function() { stopWatch(musicOrder); }, 100);
-      playPauseStatus[musicOrder] = "playing";
+      audio[musicOrder].load();
+      audio[musicOrder].addEventListener("loadeddata", function() {
+        audio[musicOrder].play();
+        timerBar.classList.add("timer-bar-animation");
+        timerBar.style.animationPlayState = "running";
+        interval_ID_container[musicOrder] = setInterval(function() { stopWatch(musicOrder); }, 100);
+        playPauseStatus[musicOrder] = "playing";
+      })
       break;
+      
     case "playing":
       audio[musicOrder].pause();
       playPauseButton.classList.remove("playing");
