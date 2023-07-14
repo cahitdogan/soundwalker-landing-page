@@ -12,11 +12,6 @@
 }
 
 @font-face {
-    font-family: "Morganite Book";
-    src: url("fonts/Morganite-Book.ttf");
-}
-
-@font-face {
     font-family: "R-flex";
     src: url("fonts/R-Flex-Regular.otf");
     font-weight: 400;
