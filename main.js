@@ -1,6 +1,7 @@
 const musicPlayers = document.querySelectorAll(".music-player");
 const audio = document.querySelectorAll("audio");
 const playPauseStatus = ["paused", "paused", "paused"]; /*status for paused and playing cases*/
+const musicLoadingStatus = ["waiting", "waiting", "waiting"]; 
 const interval_ID_container = []; /*contains the setInterval() function's ID*/
 
 
@@ -13,22 +14,28 @@ function playPause(musicOrder) {
 
   switch (playPauseStatus[musicOrder]) {
     case "paused":
+
       for (let index = 0; index < musicPlayers.length; index++) {
         if (playPauseStatus[index] === "playing") {
           playPause(index);
         }
       }
+
       playPauseButton.classList.add("playing");
-      audio[musicOrder].load();
-      audio[musicOrder].addEventListener("loadeddata", function() {
-        audio[musicOrder].play();
-        timerBar.classList.add("timer-bar-animation");
-        timerBar.style.animationPlayState = "running";
-        interval_ID_container[musicOrder] = setInterval(function() { stopWatch(musicOrder); }, 100);
-        playPauseStatus[musicOrder] = "playing";
-      })
-      break;
       
+      if (musicLoadingStatus[musicOrder] === "waiting") {
+        audio[musicOrder].load();
+        musicLoadingStatus[musicOrder] = "loaded"
+      }
+
+      audio[musicOrder].play();
+      timerBar.classList.add("timer-bar-animation");
+      timerBar.style.animationPlayState = "running";
+      interval_ID_container[musicOrder] = setInterval(function() { stopWatch(musicOrder); }, 100);
+      playPauseStatus[musicOrder] = "playing";
+
+      break;
+
     case "playing":
       audio[musicOrder].pause();
       playPauseButton.classList.remove("playing");
