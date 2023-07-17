@@ -231,12 +231,16 @@ header > #top-block {
     background-color: var(--white);
 }
 
-#header-bottom-content > .box > div + img {
+#header-bottom-content > .box > .album-cover-container > img:first-child {
     width: 70%;
     max-width: 35rem;
     aspect-ratio: 1;
     display: block;
     margin: auto;
+}
+
+#header-bottom-content > .box > .album-cover-container > img:last-child {
+    display: none;
 }
 
 #header-bottom-content > .box > .thin-content {
@@ -282,7 +286,7 @@ header > #top-block {
     max-width: 50rem;
     background-color: var(--purple);
     border-radius: 1.2rem 1.2rem 0.8rem 0.8rem; 
-    box-shadow: 0.3rem 0.3rem var(--font-color-navy-blue);
+    box-shadow: 0.4rem 0.4rem var(--font-color-navy-blue);
     display: flex;
 }
   
@@ -496,6 +500,40 @@ header > #top-block {
 
 @media screen and (width >= 1200px) {
 
+    #header-images-anchor {
+        position: absolute;
+        right: 22%;
+        top: 50%;
+        width: 1px;
+        height: 1px;
+    }
+
+    #header-images-anchor > img:nth-child(1) {
+        max-width: unset;
+        width: 19vw;
+        position: absolute;
+        top: -20rem;
+        left: -5rem;
+    }
+
+    #header-images-anchor > img:nth-child(2) {
+        max-width: unset;
+        width: 17vw;
+        position: absolute;
+        top: -13rem;
+        left: -20rem;
+    }
+
+    #header-images-anchor > img:nth-child(3) {
+        max-width: unset;
+        width: 19vw;
+        position: absolute;
+        top: -2rem;
+        left: -15rem;
+    }
+
+    /***************************/
+
     #header-bottom-content > .box {
         display: grid;
         grid-template-columns: auto auto;
@@ -506,25 +544,56 @@ header > #top-block {
         position: relative;
         padding-left: 3rem;
         padding-right: 3rem;
+
+        overflow-x: clip;
+
+        z-index: 1;
     }
 
     #header-bottom-content > .box > .thin-content {
         grid-column: 1 / 3;
+        transition: 0.5s;
     }
 
     #header-bottom-content > .box > .content {
         align-self: center;
     }
 
-    #header-bottom-content > .box > img {
+    #header-bottom-content > .box > .album-cover-container {
+        position: relative;
+    }
+
+    #header-bottom-content > .box > .album-cover-container > img:first-child {
         max-width: unset !important;
         width: 26rem !important;
         margin: unset !important;
     }
 
+    #header-bottom-content > .box > .album-cover-container > img:last-child {
+        display: unset;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        width: 26rem;
+        aspect-ratio: 1;
+
+        transition: 0.5s;
+    }
+
+    #header-bottom-content > .box:hover > .album-cover-container > img:last-child {
+        transform: translateY(-49%) rotate(480deg);
+    }
+
+    #header-bottom-content > .box:hover > .thin-content {
+        transform: translateX(-130%);
+    }
+
     #header-bottom-content > .box > .background-animation {
         position: absolute;
-        z-index: -1;
+        z-index: -2;
         transition: 0.5s;
     }
     
@@ -541,18 +610,6 @@ header > #top-block {
     }
 
     #header-bottom-content > .box2 {
-        background-color: transparent;
-    }
-    
-    #header-bottom-content > .box2 > .background-animation {
         background-color: var(--white);
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
-    #header-bottom-content > .box2:hover > .background-animation {
-        left: 100%;
     }
 }

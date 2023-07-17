@@ -1,8 +1,7 @@
 const musicPlayers = document.querySelectorAll(".music-player");
 const audio = document.querySelectorAll("audio");
-const playPauseStatus = ["paused", "paused", "paused"]; /*status for paused and playing cases*/
-const musicLoadingStatus = ["waiting", "waiting", "waiting"]; 
-const interval_ID_container = []; /*contains the setInterval() function's ID*/
+const playPauseStatus = ["paused", "paused", "paused"];
+let interval_ID_container; /*contains the setInterval() function's ID*/
 
 
 
@@ -14,24 +13,16 @@ function playPause(musicOrder) {
 
   switch (playPauseStatus[musicOrder]) {
     case "paused":
-
       for (let index = 0; index < musicPlayers.length; index++) {
         if (playPauseStatus[index] === "playing") {
           playPause(index);
         }
       }
-
       playPauseButton.classList.add("playing");
-      
-      if (musicLoadingStatus[musicOrder] === "waiting") {
-        audio[musicOrder].load();
-        musicLoadingStatus[musicOrder] = "loaded"
-      }
-
       audio[musicOrder].play();
       timerBar.classList.add("timer-bar-animation");
       timerBar.style.animationPlayState = "running";
-      interval_ID_container[musicOrder] = setInterval(function() { stopWatch(musicOrder); }, 100);
+      interval_ID_container = setInterval(function() { stopWatch(musicOrder); }, 100);
       playPauseStatus[musicOrder] = "playing";
 
       break;
@@ -40,8 +31,8 @@ function playPause(musicOrder) {
       audio[musicOrder].pause();
       playPauseButton.classList.remove("playing");
       timerBar.style.animationPlayState = "paused";
+      clearInterval(interval_ID_container);
       playPauseStatus[musicOrder] = "paused";
-      clearInterval(interval_ID_container[musicOrder]);
   }
 }
 
@@ -92,7 +83,7 @@ function rewind(musicOrder) {
     audio[musicOrder].currentTime = 0;
   
     if (playPauseStatus[musicOrder] === "playing") {
-      clearInterval(interval_ID_container[musicOrder]);
+      clearInterval(interval_ID_container);
     }
   
     milliseconds[musicOrder] = 0;
@@ -102,7 +93,7 @@ function rewind(musicOrder) {
     minute_HTML[musicOrder].innerHTML = minute[musicOrder];
   
     if (playPauseStatus[musicOrder] === "playing") {
-      interval_ID_container[musicOrder] = setInterval(function() { stopWatch(musicOrder); }, 100);
+      interval_ID_container = setInterval(function() { stopWatch(musicOrder); }, 100);
     }
   
     timerBar.classList.remove("timer-bar-animation");
@@ -111,7 +102,3 @@ function rewind(musicOrder) {
       timerBar.classList.add("timer-bar-animation");
     }
 }
-
-
-//Q: Can i send argument to stopWatch() function with setInterval() function? Explain how it works.
-//A: Yes, you can. You can send argument to stopWatch() function with setInterval() function. You can send argument to a function with setInterval() function by using anonymous function. For example, setInterval(function() { stopWatch(0); }, 100);. In this example, we send 0 to stopWatch() function.
