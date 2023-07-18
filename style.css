@@ -216,6 +216,10 @@ header > #top-block {
     display: none;
 }
 
+#header-images-anchor {
+    display: none;
+}
+
 /****************************************************************/
 
 #header-bottom-content {
@@ -288,6 +292,7 @@ header > #top-block {
     border-radius: 1.2rem 1.2rem 0.8rem 0.8rem; 
     box-shadow: 0.4rem 0.4rem var(--font-color-navy-blue);
     display: flex;
+    color: var(--white);
 }
   
 #trends img {
@@ -317,14 +322,12 @@ header > #top-block {
 
 #trends .artist {
     font-size: 1.1rem;
-    color: var(--white);
     font-family: R-flex, sans-serif;
     line-height: 1rem;
 }
 
 #trends cite {
     letter-spacing: 0.1rem;
-    color: var(--white);
     font-size: 3rem;
     font-style: normal;
     line-height: 2.5rem;
@@ -377,7 +380,6 @@ header > #top-block {
     gap: 1.4%;
     padding: 0 3%;
     font-size: 1.25rem;
-    color: var(--white);
     font-family: Arial, Helvetica, sans-serif, sans-serif;
 }
 
@@ -418,14 +420,14 @@ header > #top-block {
 
     /***************************/
 
-    #trends > .trends-box {
+    #trends > #trends-boxes {
         padding-top: 2.5rem;
+    }
+
+    #trends > #trends-boxes > .music-player {
         background-color: var(--white);
-        width: 92%;
-        max-width: 56.4rem;
-        height: 55.4rem;
-        margin: auto;
-        position: relative;
+        color: var(--font-color-navy-blue);
+        box-shadow: none;
     }
 }
 
@@ -450,7 +452,6 @@ header > #top-block {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        
 
         color: rgba(109, 68, 255, 0.2);
         font-size: 60rem;
@@ -502,34 +503,53 @@ header > #top-block {
 
     #header-images-anchor {
         position: absolute;
-        right: 22%;
+        right: 28%;
         top: 50%;
         width: 1px;
         height: 1px;
+        z-index: 3;
+        display: unset;
     }
 
     #header-images-anchor > img:nth-child(1) {
         max-width: unset;
-        width: 19vw;
+        width: clamp(20rem, 20vw, 30rem);
         position: absolute;
         top: -20rem;
-        left: -5rem;
+        left: 0rem;
     }
 
     #header-images-anchor > img:nth-child(2) {
         max-width: unset;
-        width: 17vw;
+        width: clamp(17rem, 17vw, 25rem);
         position: absolute;
         top: -13rem;
-        left: -20rem;
+        left: -13rem;
     }
 
     #header-images-anchor > img:nth-child(3) {
         max-width: unset;
-        width: 19vw;
+        width: clamp(20rem, 20vw, 30rem);
         position: absolute;
         top: -2rem;
-        left: -15rem;
+        left: -10rem;
+    }
+
+    #header-images-anchor > img:nth-child(1),
+    #header-images-anchor > img:nth-child(2),
+    #header-images-anchor > img:nth-child(3) {
+        transition: 0.3s;   
+    }
+
+    #header-images-anchor > img:nth-child(1):hover,
+    #header-images-anchor > img:nth-child(2):hover {
+        transform: scale(115%);
+        z-index: 1;
+    }
+
+    #header-images-anchor > img:nth-child(3):hover {
+        transform: scale(112%);
+        z-index: 1;
     }
 
     /***************************/
