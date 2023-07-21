@@ -102,3 +102,47 @@ function rewind(musicOrder) {
       timerBar.classList.add("timer-bar-animation");
     }
 }
+
+
+/*-------------------------- PODCASTS SCROLL EVENT FOR ANIMATION--------------------------*/
+
+
+const podcasts = document.querySelectorAll(".podcast")
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      myFunction(0);
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+observer.observe(podcasts[0]);
+
+const observer2 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      myFunction(1);
+      observer2.unobserve(entry.target);
+    }
+  });
+});
+
+observer2.observe(podcasts[1]);
+
+const observer3 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      myFunction(2);
+      observer3.unobserve(entry.target);
+    }
+  });
+});
+
+observer3.observe(podcasts[2]);
+
+
+function myFunction(element) {
+    podcasts[element].classList.add("podcast-animation");
+}

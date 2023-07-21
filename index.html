@@ -39,7 +39,7 @@
             <button id="create-account-button">CREATE ACCOUNT</button>
         </div>
 
-        <div id="header-background-text">SOUNDWALKER</div>
+        <div class="background-text" id="header-background-text">SOUNDWALKER</div>
         <div id="header-content-block">
             <h2 id="header-h2">CONNECT ON SOUNDWALKER</h2>
             <p>Discover, stream, and share a constantly expanding mix of music from emerging and major electronic artists around the world.</p>
@@ -53,6 +53,7 @@
             <img src="images/header-image-1.webp" alt="deadmau5 music cover">
             <img src="images/header-image-3.webp" alt="deadmau5 music cover">
             <img src="images/header-image-2.webp" alt="deadmau5 music cover">
+            <img src="images/header-image-4.webp" alt="deadmau5 music cover">
         </div>
     </header>
 
@@ -85,6 +86,9 @@
         </section>
 
         <section id="trends">
+            <img src="images/light.svg" alt="background image" class="light">
+            <img src="images/paths/path-1.svg" alt="background image" class="path" id="trends-path">
+
             <h3>HEAR WHAT’S TRENDING IN THE SOUNDWALKER COMMUNITY</h3>
             
             <div id="trends-boxes">
@@ -93,7 +97,13 @@
                 <audio src="musics/on-the-line.mp3" id="on-the-line-mp3" preload="auto" loop></audio>
 
                 <div class="music-player" id="music-player-1">
-                    <img src="images/cover/ocean-drive-small.webp" alt="music cover" draggable="false" width="88" height="88">
+                    <div class="music-number">01</div>
+
+                    <picture>
+                        <source media="(max-width: 650px)" srcset="images/cover/ocean-drive-small.webp">
+                        <source media="(min-width: 651px)" srcset="images/cover/ocean-drive-big.webp">
+                        <img src="images/cover/ocean-drive-big.webp" alt="music cover" draggable="false" width="230" height="230">
+                    </picture>
                                     
                     <div class="right-container">
                         <div class="top">
@@ -103,8 +113,8 @@
                             </div>
 
                             <div class="buttons">
-                                <button class="rewind-button" onclick="rewind(0)" title="rewind"></button>
-                                <button class="play-pause-button" onclick="playPause(0)" title="Play / Pause"></button>
+                                <button class="rewind-button" onclick="rewind(0)" title="rewind" aria-label="rewind"></button>
+                                <button class="play-pause-button" onclick="playPause(0)" title="Play / Pause" aria-label="play or pause"></button>
                             </div>
                         </div>
 
@@ -123,7 +133,13 @@
                 </div>
 
                 <div class="music-player">
-                    <img src="images/cover/sirens-small.webp" alt="music cover" draggable="false" width="88" height="88">
+                    <div class="music-number">02</div>
+
+                    <picture>
+                        <source media="(max-width: 650px)" srcset="images/cover/sirens-small.webp">
+                        <source media="(min-width: 651px)" srcset="images/cover/sirens-big.webp">
+                        <img src="images/cover/sirens-big.webp" alt="music cover" draggable="false" width="230" height="230">
+                    </picture>
                                     
                     <div class="right-container">
                         <div class="top">
@@ -133,8 +149,8 @@
                             </div>
 
                             <div class="buttons">
-                                <button class="rewind-button" onclick="rewind(1)" title="rewind"></button>
-                                <button class="play-pause-button" onclick="playPause(1)" title="Play / Pause"></button>
+                                <button class="rewind-button" onclick="rewind(1)" title="rewind" aria-label="rewind"></button>
+                                <button class="play-pause-button" onclick="playPause(1)" title="Play / Pause" aria-label="play or pause"></button>
                             </div>
                         </div>
 
@@ -153,7 +169,13 @@
                 </div>
 
                 <div class="music-player">
-                    <img src="images/cover/on-the-line-small.webp" alt="music cover" draggable="false" width="88" height="88">
+                    <div class="music-number">03</div>
+
+                    <picture>
+                        <source media="(max-width: 650px)" srcset="images/cover/on-the-line-small.webp">
+                        <source media="(min-width: 651px)" srcset="images/cover/on-the-line-big.webp">
+                        <img src="images/cover/on-the-line-big.webp" alt="music cover" draggable="false" width="230" height="230">
+                    </picture>
                                     
                     <div class="right-container">
                         <div class="top">
@@ -163,8 +185,8 @@
                             </div>
 
                             <div class="buttons">
-                                <button class="rewind-button" onclick="rewind(2)" title="rewind"></button>
-                                <button class="play-pause-button" onclick="playPause(2)" title="Play / Pause"></button>
+                                <button class="rewind-button" onclick="rewind(2)" title="rewind" aria-label="rewind"></button>
+                                <button class="play-pause-button" onclick="playPause(2)" title="Play / Pause" aria-label="play or pause"></button>
                             </div>
                         </div>
 
@@ -184,6 +206,81 @@
 
 
             </div>
+        </section>
+
+        <section id="podcast-library">
+            <div class="background-text main-background-text">PODCAST</div>
+            <img src="images/light.svg" alt="background image" class="light">
+            <img src="images/paths/path-2.svg" alt="background image" class="path" id="podcast-path">
+
+            <h2 class="main-h2">
+                <div>The Best Of</div>
+                PODCAST LIBRARY
+            </h2>
+
+            <div id="podcasts-container">
+                <div class="podcast">
+                    <img src="images/podcasts/podcast-big-1.webp" alt="podcast image">
+
+                    <div class="text-content-container">
+                        <div class="top-info">
+                            <div>LATEST EPISODE</div>
+                            <div>THURSDAYS 21H - 23H</div>
+                        </div>
+                        <div class="podcast-name">Brave New Rave</div>
+                        <div class="hoster">Hosted and curated by Moderna</div>
+                        <div class="about-podcast">EXPLORING BERLIN’S INFLUENCE ON TECHNO, DARK DISCO AND LEFT FIELD CULTURE</div>
+                    </div>
+
+                    <div class="purple-stick"></div>
+                </div>
+
+                <div class="podcast">
+                    <img src="images/podcasts/podcast-big-2.webp" alt="podcast image">
+
+                    <div class="text-content-container">
+                        <div class="top-info">
+                            <div>LATEST EPISODE</div>
+                            <div>THURSDAYS 21H - 23H</div>
+                        </div>
+                        <div class="podcast-name">Below the Ten: Life in South LA</div>
+                        <div class="hoster">Hosted and curated by Conrad N. Hilton</div>
+                        <div class="about-podcast">ONGOING SERIES TELLING INTIMATE STORIES ABOUT THE PEOPLE</div>
+                    </div>
+
+                    <div class="purple-stick"></div>
+                </div>
+
+                <div class="podcast">
+                    <img src="images/podcasts/podcast-big-3.webp" alt="podcast image">
+
+                    <div class="text-content-container">
+                        <div class="top-info">
+                            <div>LATEST EPISODE</div>
+                            <div>THURSDAYS 21H - 23H</div>
+                        </div>
+                        <div class="podcast-name">Anthony Valadez</div>
+                        <div class="hoster">Hosted and curated by Anthony Valadez</div>
+                        <div class="about-podcast">BROKEN BEATS AND SOULFUL KEY CHORDS, FROM YESTERDAY'S DUSTY DRUMS TO TOMORROW'S SOUNDS</div>
+                    </div>
+
+                    <div class="purple-stick"></div>
+                </div>
+            </div>
+            
+            <div id="view-all-button">
+                <button>VIEW ALL</button>
+            </div>
+        </section>
+
+        <section id="artists">
+            <div class="background-text main-background-text" >ARTISTS</div>
+            <img src="images/light.svg" alt="background image" class="light">
+            <img src="images/paths/path-3.svg" alt="background image" class="path" id="artists-path">
+            <h2 class="main-h2">
+                <div>The Best Of</div>
+                TOP ARTISTS
+            </h2>
         </section>
     </main>
 
