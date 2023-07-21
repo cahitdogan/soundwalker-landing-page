@@ -512,13 +512,7 @@ section {
 }
 
 .light {
-    position: absolute;
-    z-index: -1;
-    max-width: unset;
-    width: 200rem;
-    top: -90rem;
-    left: 50%;
-    transform: translateX(-50%);
+    display: none;
 }
 
 .path {
@@ -682,6 +676,17 @@ section {
     }
 
     /***************************/
+
+    .light {
+        display: unset;
+        position: absolute;
+        z-index: -1;
+        max-width: unset;
+        width: 200rem;
+        top: -90rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     .path {
         display: unset;
