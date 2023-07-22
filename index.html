@@ -57,6 +57,8 @@
         </div>
     </header>
 
+    <div id="container-for-overflow">
+
     <main>
         <section id="header-bottom-content">
             <div class="box box1">
@@ -281,8 +283,122 @@
                 <div>The Best Of</div>
                 TOP ARTISTS
             </h2>
+
+            <div id="container-for-prev-next-buttons">
+                <button class="prev-artist"><img src="images/prev-button.svg" alt="previous artist" onclick="scrollToPrevArtist()"></button>
+                <button class="next-artist"><img src="images/next-button.svg" alt="next artist" onclick="scrollToNextArtist()"></button>
+
+                <div id="artists-container">
+                    
+                    <div class="artist">
+                        <img src="images/artists/artist-1.webp" alt="artist's photo">
+                        <div class="text-content-grid">
+                            <div class="number">01</div>
+                            <div class="artist-name">
+                                Armin van Buuren
+                                <div class="about-artist">
+                                    Armin van Buuren is another Netherlands-based DJ ...
+                                </div>
+                            </div>
+                            <button>MORE ABOUT</button>
+                        </div>
+                    </div>
+                    
+                    <div class="artist">
+                        <img src="images/artists/artist-2.webp" alt="artist's photo">
+                        <div class="text-content-grid">
+                            <div class="number">02</div>
+                            <div class="artist-name">
+                                Deadmau5
+                                <div class="about-artist">
+                                    Deadmau5 is the only Canadian EDM DJ on this list ...
+                                </div>
+                            </div>
+                            <button>MORE ABOUT</button>
+                        </div>
+                    </div>
+                    
+                    <div class="artist">
+                        <img src="images/artists/artist-3.webp" alt="artist's photo">
+                        <div class="text-content-grid">
+                            <div class="number">03</div>
+                            <div class="artist-name">
+                                Kygo
+                                <div class="about-artist">
+                                    Kygo is a Norway-based DJ known for his unique brand of EDM ...
+                                </div>
+                            </div>
+                            <button>MORE ABOUT</button>
+                        </div>
+                    </div>
+                    
+                    <div class="artist">
+                        <img src="images/artists/artist-4.webp" alt="artist's photo">
+                        <div class="text-content-grid">
+                            <div class="number">04</div>
+                            <div class="artist-name">
+                                Disclosure
+                                <div class="about-artist">
+                                    Disclosure is a brother duo from London, UK ...
+                                </div>
+                            </div>
+                            <button>MORE ABOUT</button>
+                        </div>
+                    </div>
+                    
+                    <div class="artist">
+                        <img src="images/artists/artist-5.webp" alt="artist's photo">
+                        <div class="text-content-grid">
+                            <div class="number">05</div>
+                            <div class="artist-name">
+                                Hardwell
+                                <div class="about-artist">
+                                    Hardwell is a Netherlands-based electro-influenced DJ ...
+                                </div>
+                            </div>
+                            <button>MORE ABOUT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <div class="background-text main-background-text" >SOUNDWALKER</div>
+        <img src="images/light.svg" alt="background image" class="light">
+        <img src="images/paths/path-2.svg" alt="background image" class="path" id="footer-path">
+        <h2 class="main-h2" id="footer-h2">YOUR PLACE FOR MUSIC DELIGHT</h2>
+
+        <div id="newsletter">
+            <h4>Music insider Newsletter</h4>
+            <p>Feed your curiosity all week with the best in news, music, culture, and events</p>
+
+            <form action="">
+                <input type="email" name="email" id="email" placeholder="Enter your e-mail">
+                <input type="submit" value="SUBSCRIBE">
+            </form>
+
+            <div id="footer-logo">
+                SOUNDWALKER
+                <span>Electronic Music Space</span>
+            </div>
+            
+            <ul>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">CAREERS</a></li>
+                <li><a href="#">HELP/FAQ</a></li>
+                <li><a href="#">FRINGE BENEFITS</a></li>
+                <li><a href="#">EVENTS</a></li>
+                <li><a href="#">BECOME A SPONSOR</a></li>
+                <li><a href="#">TERMS OF SERVICE</a></li>
+                <li><a href="#">PRIVACY POLICY</a></li>
+            </ul>
+
+            <div id="copyright">© 2023 SOUNDWALKER All Rights Reserved</div>
+        </div>
+    </footer>
+</div>
 
 
     <script src="main.js"></script>

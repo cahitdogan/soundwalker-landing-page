@@ -146,3 +146,26 @@ observer3.observe(podcasts[2]);
 function myFunction(element) {
     podcasts[element].classList.add("podcast-animation");
 }
+
+
+
+
+
+
+/*-------------------------- ARTISTS CONTAINER SLIDER FUNCTIONS --------------------------*/
+
+const artistsContainer = document.querySelector("#artists #artists-container")
+
+function scrollToNextArtist() {
+    artistsContainer.scrollBy({
+      left: 350,
+      behavior: "smooth",
+    });
+}
+
+function scrollToPrevArtist() {
+    artistsContainer.scrollBy({
+      left: -350,
+      behavior: "smooth",
+    });
+}

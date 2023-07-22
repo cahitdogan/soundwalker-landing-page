@@ -42,9 +42,6 @@
     --font-color-navy-blue: #272E5D;
     --purple: #6D44FF;
     --white: #EFEBFF;
-
-    --semi-bold: 500;
-    --regular: 400;
 }
 
 html {
@@ -112,15 +109,14 @@ button {
 
 /****************************************************************/
 
-h1 {
+h1, #footer-logo {
     font-size: 4.6rem;
     display: flex;
     flex-direction: column;
-    font-weight: var(--semi-bold);
     letter-spacing: 0.35rem;
 }
 
-h1 > span {
+h1 > span, #footer-logo > span {
     font-size: 1.9rem;
     letter-spacing: 0.35rem;
     font-weight: var(--semi-bold);
@@ -140,7 +136,7 @@ h3 {
     font-weight: var(--semi-bold);
     letter-spacing: 0.3rem;
     padding: 0 3rem;
-    margin-bottom: 4.7rem;
+    margin-bottom: 6rem;
 }
 
 p {
@@ -223,7 +219,7 @@ header > #top-block {
 /****************************************************************/
 
 #header-bottom-content {
-    margin-bottom: 7.5rem;
+    margin-bottom: 13rem;
 }
 
 #header-bottom-content > .box {
@@ -270,6 +266,12 @@ header > #top-block {
     font-size: 5.5rem;
     font-family: Qwigley, cursive;
     color: var(--purple);
+}
+
+/****************************************************************/
+
+#container-for-overflow {
+    overflow-y: hidden;
 }
 
 /****************************************************************/
@@ -506,6 +508,182 @@ section {
 
 /****************************************************************/
 
+#artists #container-for-prev-next-buttons {
+    width: 40rem;
+    margin: auto;
+    position: relative;
+}
+
+#artists #artists-container {
+    width: 32rem;
+    height: 52.2rem;
+    overflow: hidden; 
+    margin: auto;
+    display: flex;
+    gap: 5rem;
+    padding: 1rem;
+}
+
+#artists .artist {
+    background-color: var(--white);
+    min-width: 30rem;
+    width: 30rem;
+    max-width: 30rem;
+    height: 52.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#artists #artists-container .artist img {
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+#artists .text-content-grid {
+    flex-grow: 1;
+    display: grid;
+    place-content: end center;
+    grid-template-columns: 6.5rem 20rem;
+    grid-template-rows: 15rem 5rem;
+}
+
+#artists .number {
+    font-size: 10rem;
+    color: var(--purple);
+    opacity: 0.3;
+    letter-spacing: 0.6rem;
+    line-height: 8.5rem;
+}
+
+#artists .artist-name {
+    font-size: 4.8rem;
+    font-style: italic;
+    letter-spacing: 0.2rem;
+}
+
+#artists .about-artist {
+    font-size: 1.6rem;
+    font-family: R-Flex, sans-serif;
+    letter-spacing: 0rem;
+}
+
+#artists .artist button {
+    grid-column: 2 / 3;
+    justify-self: end;
+    font-size: 2.4rem;
+    place-self: center end;
+}
+
+#artists #container-for-prev-next-buttons > button {
+    position: absolute;
+    width: 4.5rem;
+    height: 4.5rem;
+    transform: translateY(50%);
+    bottom: 50%;
+    background-color: var(--white);
+    border-radius: 100%;
+    box-shadow: 0 0 0.5rem 0.1rem #d0cce0;
+}
+
+#artists #container-for-prev-next-buttons > button:nth-child(1) {
+    left: 0rem;
+}
+
+#artists #container-for-prev-next-buttons > button:nth-child(2) {
+    right: 0;
+}
+
+/****************************************************************/
+
+footer {
+    background-image: linear-gradient(#623cea00, #623CEA);
+    overflow-x: clip;
+    position: relative;
+}
+
+footer #footer-h2 {
+    display: none;
+}
+
+footer #newsletter {
+    text-align: center;
+}
+
+footer #newsletter h4 {
+    letter-spacing: 0.2rem;
+    font-style: italic;
+    font-size: 4.8rem;
+    margin-bottom: 1.5rem;
+    opacity: initial;
+}
+
+footer #newsletter p {
+    margin-bottom: 4.5rem;
+    padding: 0 3rem;
+}
+
+footer form {
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 0 1.5rem #623cea33;
+    margin-bottom: 10rem;
+}
+
+footer form #email {
+    background-color: var(--white);
+    height: 3.5rem;
+    width: 30rem;
+    padding-left: 1rem;
+}
+
+footer form #email::placeholder {
+    color: #272e5de8;
+    font-family: R-Flex, sans-serif;
+}
+
+footer form input[type="submit"] {
+    width: 8.5rem;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background-color: var(--purple);
+    color: var(--white);
+    font-style: italic;
+    font-family: Morganite, sans-serif;
+    font-size: 2.3rem;
+    letter-spacing: 0.15rem;
+}
+
+#footer-logo {
+    background: url(images/footer-circle-chart.svg) no-repeat;
+    background-position: center;
+    margin: auto;
+    padding: 2rem 1rem;
+    margin-bottom: 5rem;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+footer ul li a {
+    font-family: R-Flex, sans-serif;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+footer #copyright {
+    font-family: R-Flex, sans-serif;
+    color: var(--white);
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+}
+
+/****************************************************************/
+
 section {
     position: relative;
     overflow-x: clip;
@@ -520,6 +698,20 @@ section {
 }
 
 /****************************************************************/
+
+@media screen and (width < 410px) {
+    #artists #container-for-prev-next-buttons {
+        width: max-content;
+    }
+
+    #artists #container-for-prev-next-buttons > button:nth-child(1) {
+        left: -2rem;
+    }
+    
+    #artists #container-for-prev-next-buttons > button:nth-child(2) {
+        right: -2rem;
+    }
+}
 
 @media screen and (width >= 650px) {
 
@@ -711,6 +903,10 @@ section {
         transform: translateX(25%);
     }
 
+    #footer-path {
+        top: -20rem;
+        right: -55rem;
+    }
 
     /***************************/
 
@@ -757,15 +953,41 @@ section {
     #view-all-button {
         width: clamp(90rem, 90vw, 100rem);
     }
+
+    /***************************/
+    
+    #artists #container-for-prev-next-buttons {
+        width: 80rem;
+    }
+    
+    #artists #artists-container {
+        width: 67rem;
+        height: 54.2rem;
+    }
+
+    #artists .artist {
+        box-shadow: 0 0 1.5rem #623cea33;
+    }
+
+    /***************************/
+
+    footer #footer-h2 {
+        display: block;
+    }
+
+    footer ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.75rem;
+        margin-bottom: 2rem;
+    }
 }
 
 
 
 @media screen and (width >= 1200px) {
-
-    
-
-    /***************************/
 
     #header-bottom-content > .box {
         display: grid;
@@ -850,6 +1072,16 @@ section {
         flex-direction: row;
         justify-content: center;
         gap: 5vw;
+    }
+
+    /***************************/
+
+    #artists #container-for-prev-next-buttons {
+        width: 115rem;
+    }
+    
+    #artists #artists-container {
+        width: 102rem;
     }
 }
 
