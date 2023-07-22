@@ -218,10 +218,6 @@ header > #top-block {
 
 /****************************************************************/
 
-#header-bottom-content {
-    margin-bottom: 13rem;
-}
-
 #header-bottom-content > .box {
     padding-top: 4rem;
     padding-bottom: 3.2rem;
@@ -275,6 +271,10 @@ header > #top-block {
 }
 
 /****************************************************************/
+
+#trends {
+    padding-top: 20rem;
+}
 
 #trends > #trends-boxes {
     display: flex;
@@ -419,7 +419,7 @@ header > #top-block {
 
 /****************************************************************/
 
-section {
+section:not(#header-bottom-content) {
     margin-bottom: 23rem;
 }
 
@@ -516,7 +516,7 @@ section {
 
 #artists #artists-container {
     width: 32rem;
-    height: 52.2rem;
+    height: 54.2rem;
     overflow: hidden; 
     margin: auto;
     display: flex;
@@ -532,6 +532,7 @@ section {
     height: 52.2rem;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 1.5rem #623cea33;
 }
 
 #artists #artists-container .artist img {
@@ -618,7 +619,7 @@ footer #newsletter h4 {
 }
 
 footer #newsletter p {
-    margin-bottom: 4.5rem;
+    margin-bottom: 3rem;
     padding: 0 3rem;
 }
 
@@ -626,7 +627,7 @@ footer form {
     position: relative;
     display: inline-block;
     box-shadow: 0 0 1.5rem #623cea33;
-    margin-bottom: 10rem;
+    margin-bottom: 8rem;
 }
 
 footer form #email {
@@ -839,7 +840,6 @@ section {
 
     #header-bottom-content {
         display: flex;
-        margin-bottom: 26rem;
     }
 
     #header-bottom-content > .box {
@@ -878,6 +878,11 @@ section {
         top: -90rem;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    #trends-light {
+        top: -10rem;
+        width: 80rem;
     }
 
     .path {
@@ -962,11 +967,6 @@ section {
     
     #artists #artists-container {
         width: 67rem;
-        height: 54.2rem;
-    }
-
-    #artists .artist {
-        box-shadow: 0 0 1.5rem #623cea33;
     }
 
     /***************************/
