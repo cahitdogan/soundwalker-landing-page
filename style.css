@@ -653,6 +653,7 @@ footer form input[type="submit"] {
     font-family: Morganite, sans-serif;
     font-size: 2.3rem;
     letter-spacing: 0.15rem;
+    cursor: pointer;
 }
 
 #footer-logo {
@@ -674,6 +675,10 @@ footer ul li a {
     font-family: R-Flex, sans-serif;
     font-size: 1.5rem;
     color: var(--white);
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
 }
 
 footer #copyright {

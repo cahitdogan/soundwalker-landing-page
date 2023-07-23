@@ -1,6 +1,7 @@
 const musicPlayers = document.querySelectorAll(".music-player");
 const audio = document.querySelectorAll("audio");
 const playPauseStatus = ["paused", "paused", "paused"];
+let audioLoadingCheck;
 let interval_ID_container; /*contains the setInterval() function's ID*/
 
 
@@ -18,13 +19,22 @@ function playPause(musicOrder) {
           playPause(index);
         }
       }
-      playPauseButton.classList.add("playing");
-      audio[musicOrder].play();
-      timerBar.classList.add("timer-bar-animation");
-      timerBar.style.animationPlayState = "running";
-      interval_ID_container = setInterval(function() { stopWatch(musicOrder); }, 100);
-      playPauseStatus[musicOrder] = "playing";
 
+      if (audio[musicOrder].readyState !== 4) {
+        audio[musicOrder].load();
+      }
+
+      audioLoadingCheck = setInterval(function() {
+        if (audio[musicOrder].readyState === 4) {
+          playPauseButton.classList.add("playing");
+          audio[musicOrder].play();
+          timerBar.classList.add("timer-bar-animation");
+          timerBar.style.animationPlayState = "running";
+          interval_ID_container = setInterval(function() { stopWatch(musicOrder); }, 100);
+          playPauseStatus[musicOrder] = "playing";
+          clearInterval(audioLoadingCheck);
+        }
+      }, 100)
       break;
 
     case "playing":
