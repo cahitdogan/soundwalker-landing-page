@@ -793,6 +793,7 @@ section {
     header {
         background-image: url(images/hero-image.webp);
         overflow: hidden;
+        background-position: top;
     }
 
     header > #top-block > #sign-in-button {
