@@ -148,7 +148,7 @@ button {
     font-size: 2.8rem;
 }
 
-@media (width < 650px) {
+@media (width < 992px) {
     header {
         background-image: url(images/hero-image-mobile.webp);
     }
